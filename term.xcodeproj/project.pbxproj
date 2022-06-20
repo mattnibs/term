@@ -11,6 +11,11 @@
 		0122A0F92850080D0058D972 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0122A0F82850080D0058D972 /* ContentView.swift */; };
 		0122A0FB285008110058D972 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0122A0FA285008110058D972 /* Assets.xcassets */; };
 		0122A0FE285008110058D972 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0122A0FD285008110058D972 /* Preview Assets.xcassets */; };
+		0122A105285008300058D972 /* tty.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0122A104285008300058D972 /* tty.swift */; };
+		01235924285062370041FF0C /* Buffer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01235923285062370041FF0C /* Buffer.swift */; };
+		0144998B2850139A00719F59 /* parser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0144998A2850139A00719F59 /* parser.swift */; };
+		0144998D285036A800719F59 /* Terminal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0144998C285036A800719F59 /* Terminal.swift */; };
+		015D6C2528602C7300DA1E6C /* csi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 015D6C2428602C7300DA1E6C /* csi.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +24,11 @@
 		0122A0F82850080D0058D972 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		0122A0FA285008110058D972 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0122A0FD285008110058D972 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		0122A104285008300058D972 /* tty.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = tty.swift; sourceTree = "<group>"; };
+		01235923285062370041FF0C /* Buffer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Buffer.swift; sourceTree = "<group>"; };
+		0144998A2850139A00719F59 /* parser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = parser.swift; sourceTree = "<group>"; };
+		0144998C285036A800719F59 /* Terminal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Terminal.swift; sourceTree = "<group>"; };
+		015D6C2428602C7300DA1E6C /* csi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = csi.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,10 +61,15 @@
 		0122A0F52850080D0058D972 /* term */ = {
 			isa = PBXGroup;
 			children = (
+				01235923285062370041FF0C /* Buffer.swift */,
 				0122A0F62850080D0058D972 /* termApp.swift */,
 				0122A0F82850080D0058D972 /* ContentView.swift */,
 				0122A0FA285008110058D972 /* Assets.xcassets */,
 				0122A0FC285008110058D972 /* Preview Content */,
+				0122A104285008300058D972 /* tty.swift */,
+				0144998A2850139A00719F59 /* parser.swift */,
+				0144998C285036A800719F59 /* Terminal.swift */,
+				015D6C2428602C7300DA1E6C /* csi.swift */,
 			);
 			path = term;
 			sourceTree = "<group>";
@@ -137,8 +152,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0144998B2850139A00719F59 /* parser.swift in Sources */,
+				0144998D285036A800719F59 /* Terminal.swift in Sources */,
 				0122A0F92850080D0058D972 /* ContentView.swift in Sources */,
 				0122A0F72850080D0058D972 /* termApp.swift in Sources */,
+				0122A105285008300058D972 /* tty.swift in Sources */,
+				01235924285062370041FF0C /* Buffer.swift in Sources */,
+				015D6C2528602C7300DA1E6C /* csi.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -196,10 +216,11 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				MACOSX_DEPLOYMENT_TARGET = 12.3;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
-				SDKROOT = iphoneos;
+				SDKROOT = macosx;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
@@ -250,9 +271,10 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				MACOSX_DEPLOYMENT_TARGET = 12.3;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
-				SDKROOT = iphoneos;
+				SDKROOT = macosx;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				VALIDATE_PRODUCT = YES;
@@ -283,7 +305,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 2;
 			};
 			name = Debug;
 		};
@@ -311,7 +333,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 2;
 			};
 			name = Release;
 		};
